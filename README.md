@@ -79,8 +79,8 @@ Handle the player clicking the play again button:
 <h2>
 App's state:
 </h2>
-<pre>
-```javascript
+
+```
 const images = ["url"]; //array of all images url we will use in this game
 const boxValues = []; //
 const Score = {
@@ -89,4 +89,3 @@ const Score = {
     guesses:0 // updates every 2 turns and shows how many right guesses the user have
 };
 ```
-</pre>
