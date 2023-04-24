@@ -29,49 +29,54 @@ font-family: '',sans-serif;
 <li>
 Define required constants:
     <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>allImages[]</li>
+        <li>currentGameImages[]</li>
+        <li>Score{}</li>
     </ul>
 </li>
 <li>
 Define required variables used to track the state of the game:
     <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>A Image array holding all the images will use in the game</li>
+        <li>A score object containing these keys
+        <ul>
+            <li>Timer: keeps track of gametime</li>
+            <li>Turns: keeps track of number of clicked boxes</li>
+            <li>Guesses: keeps track of number of right guesses</li>
+        </ul>
+        </li>
+        <li>An array holding images generated for the game</li>
     </ul>
 </li>
 <li>
 cache DOM elements:
     <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>cards</li>
+        <li>timer</li>
+        <li>guesses</li>
     </ul>
 </li>
 <li>
 Upon loading, the app should:
     <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>Generate a set of 8 cards from all the images we have stored</li>
+        <li>Show a start button to start timer and allow card to begin flipping on click </li>
+        <li>A play again button to restart the game anytime with new generated images at different position</li>
     </ul>
 </li>
 <li>
 Handle the player clicking a button:
     <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>Every times a player click on a card, turn increases by one</li>
+        <li>Every times a player click on 2 cards, guesses increase by one</li>
+        <li>When player click on play again, the game restarts </li>
     </ul>
 </li>
 <li>
 Handle the player clicking the play again button:
     <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>Timer, turns and guesses reset</li>
+        <li>Images change position</li>
     </ul>
 </li>
 </ol>
