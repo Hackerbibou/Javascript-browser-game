@@ -29,7 +29,7 @@ font-family: '',sans-serif;
 <li>
 Define required constants:
     <ul>
-        <li>allImages[]</li>
+        <li>imagePositions[][]</li>
         <li>currentGameImages[]</li>
         <li>Score{}</li>
     </ul>
@@ -45,7 +45,7 @@ Define required variables used to track the state of the game:
             <li>Guesses: keeps track of number of right guesses</li>
         </ul>
         </li>
-        <li>An array holding images generated for the game</li>
+        <li>An nested array holding the position of images generated for the game</li>
     </ul>
 </li>
 <li>
@@ -59,7 +59,7 @@ cache DOM elements:
 <li>
 Upon loading, the app should:
     <ul>
-        <li>Generate a set of 8 cards from all the images we have stored</li>
+        <li>Set new positions for each image card</li>
         <li>Show a start button to start timer and allow card to begin flipping on click </li>
         <li>A play again button to restart the game anytime with new generated images at different position</li>
     </ul>
@@ -88,7 +88,7 @@ App's state:
 ```
 const images = ["url"]; //array of all images url we will use in this game
 
-const boxValues = []; //
+const imagePosition = [i][j] //the images positions for the game
 
 const Score = {
     timer:"00:00" //countdown timer
