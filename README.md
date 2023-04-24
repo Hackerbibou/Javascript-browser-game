@@ -28,51 +28,51 @@ font-family: '',sans-serif
 <ol>
 <li>
 Define required constants:
-    <ol>
+    <ul>
         <li></li>
         <li></li>
         <li></li>
-    </ol>
+    </ul>
 </li>
 <li>
 Define required variables used to track the state of the game
-    <ol>
+    <ul>
         <li></li>
         <li></li>
         <li></li>
-    </ol>
+    </ul>
 </li>
 <li>
 cache DOM elements
-    <ol>
+    <ul>
         <li></li>
         <li></li>
         <li></li>
-    </ol>
+    </ul>
 </li>
 <li>
 Upon loading, the app should
-    <ol>
+    <ul>
         <li></li>
         <li></li>
         <li></li>
-    </ol>
+    </ul>
 </li>
 <li>
 Handle the player clicking a button
-    <ol>
+    <ul>
         <li></li>
         <li></li>
         <li></li>
-    </ol>
+    </ul>
 </li>
 <li>
 Handle the player clicking the play again button
-    <ol>
+    <ul>
         <li></li>
         <li></li>
         <li></li>
-    </ol>
+    </ul>
 </li>
 </ol>
 
@@ -80,4 +80,11 @@ Handle the player clicking the play again button
 App's state
 </h2>
 <pre>
+const images = ["url"] //array of all images url we will use in this game
+const boxValues = [] //
+const Score = {
+    timer:"00:00" //countdown timer
+    turn:0  //count how many boxes are clicked
+    guesses:0 // updates every 2 turns and shows how many right guesses the user have
+}
 </pre>
