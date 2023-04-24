@@ -1,6 +1,6 @@
 <h1>Plan for the game</h1>
 
-<h2>Cardi E: card guessing</h2>
+<h2>Cardi E: A card guessing</h2>
 
 <p><em>Description: </em>I want to build a single player game, that make the user choose between 16 cards. 
 When two identical cards are flipped, they stay at flip position (meaning you guessed one set)
@@ -19,7 +19,7 @@ Each cards will be chosen at random with math.random. Before adding a card at th
 
 <h2>CSS rules:</h2>
 <pre>
-font-family: '',sans-serif
+font-family: '',sans-serif;
 </pre>
 <h2>Wireframe</h2>
 <img src="./images/wireframe.jpeg"/>
@@ -35,7 +35,7 @@ Define required constants:
     </ul>
 </li>
 <li>
-Define required variables used to track the state of the game
+Define required variables used to track the state of the game:
     <ul>
         <li></li>
         <li></li>
@@ -43,7 +43,7 @@ Define required variables used to track the state of the game
     </ul>
 </li>
 <li>
-cache DOM elements
+cache DOM elements:
     <ul>
         <li></li>
         <li></li>
@@ -51,7 +51,7 @@ cache DOM elements
     </ul>
 </li>
 <li>
-Upon loading, the app should
+Upon loading, the app should:
     <ul>
         <li></li>
         <li></li>
@@ -59,7 +59,7 @@ Upon loading, the app should
     </ul>
 </li>
 <li>
-Handle the player clicking a button
+Handle the player clicking a button:
     <ul>
         <li></li>
         <li></li>
@@ -67,7 +67,7 @@ Handle the player clicking a button
     </ul>
 </li>
 <li>
-Handle the player clicking the play again button
+Handle the player clicking the play again button:
     <ul>
         <li></li>
         <li></li>
@@ -77,10 +77,10 @@ Handle the player clicking the play again button
 </ol>
 
 <h2>
-App's state
+App's state:
 </h2>
 <pre>
-
+```javascript
 const images = ["url"]; //array of all images url we will use in this game
 const boxValues = []; //
 const Score = {
@@ -88,4 +88,5 @@ const Score = {
     turn:0  //count how many boxes are clicked
     guesses:0 // updates every 2 turns and shows how many right guesses the user have
 };
+```
 </pre>
