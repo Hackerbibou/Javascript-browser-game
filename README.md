@@ -1,4 +1,6 @@
-<Cardi E>: card guessing
+<h1>Plan for the game</h1>
+
+Cardi E: card guessing
 A description of your game. Background info of the game is a nice touch.
 
 I want to build a single player game, that make the user choose between 16 cards. 
@@ -9,14 +11,29 @@ Each cards will be chosen at random with math.random. Before adding a card at th
 
 
 <img src="./images/wireframe.jpeg"/>
-![alt text](./images/wireframe.jpeg)
 
-☐ Screenshot(s): Images of your actual game.
 
-☐ Technologies Used: JavaScript, HTML, CSS...
 
-☐ Getting Started: In this section include the link to your deployed game and any instructions you deem important.
 
-☐ Next Steps: Planned future enhancements (icebox items).
 
-Note: Don't underestimate the value of a well crafted README.md. The README.md introduces your project to prospective employers and forms their first impression of your work!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
