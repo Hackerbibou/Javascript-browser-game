@@ -82,10 +82,13 @@ App's state:
 
 ```
 const images = ["url"]; //array of all images url we will use in this game
+
 const boxValues = []; //
+
 const Score = {
     timer:"00:00" //countdown timer
     turn:0  //count how many boxes are clicked
     guesses:0 // updates every 2 turns and shows how many right guesses the user have
 };
+
 ```
