@@ -108,22 +108,32 @@ body{
   display: none;
   position: fixed;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   width: 50vmin;
-  height: 10vh;
-  background-color: aliceblue;
-  color: #090200;
+  height: auto;
+  padding-bottom: 10px;
+  background-image: url("https://media3.giphy.com/media/l49JCSwMXyxHnYJws/giphy.gif");
+  background-size: 50vmin auto;
+  color: rgb(230, 183, 121);
+  font-size: 25px;
+  border-radius: 10px;
 
 }
 .lpopup{
   display: none;
   position: fixed;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   width: 50vmin;
-  height: 10vh;
-  background-color: aliceblue;
-  color: #090200;
+  height: auto;
+  padding-bottom: 10px;
+  background-image: url("https://media3.giphy.com/media/3oFzme5Lmm8jMwXrji/giphy.gif");
+  background-size: 50vmin auto;
+  color: rgb(174, 5, 5);
+  font-size: 25px;
+  border-radius: 10px;
 
 }
 @-webkit-keyframes flip-vertical-right {

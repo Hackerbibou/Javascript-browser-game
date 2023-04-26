@@ -193,3 +193,8 @@ document.querySelector(".start").addEventListener("click",function () {
     display = document.querySelector('.timer-screen');
     startTimer(fiveMinutes, display);
 })
+document.querySelectorAll(".playagain").forEach(elem=>{
+    elem.addEventListener("click",()=>{
+        window.location.reload()
+    })
+})
