@@ -27,6 +27,7 @@ let v=[]
 console.table(v)
 const arrScores=[]
 let guesses=0
+let rightGuess=0
 let turn=0
 class ImageClass{
     constructor(imageUrl,id){
@@ -61,15 +62,22 @@ function checkSolution(e){
     e.preventDefault()
     let d = ssplit(e.target.id)
     if(turn%2==0){
+        guesses++
         if(e.target.style.backgroundImage==temporary.temp){
             arrScores[d].isFlip=true;
             arrScores[ssplit(temporary.id)].isFlip=true;
             document.querySelector("#a-"+d).setAttribute("disabled","true")
             document.querySelector("#a-"+ssplit(temporary.id)).setAttribute("disabled","true")
-            
+            rightGuess++
+            document.querySelector(".guess-screen2").innerText=rightGuess
+            if(rightGuess==8){ 
+                document.querySelector(".wpopup").style.display="flex"
+                document.querySelector('.timer-screen').innerText="00:00";
+            }
 
         }
         else{
+          
             setTimeout(()=>{
                 document.querySelector("#a-"+d).classList.toggle("card-flip")
                 document.querySelector("#a-"+d).style.removeProperty("background")
@@ -129,8 +137,7 @@ cards.forEach(elem=>{
 
         }
         checkSolution(e)
-        if(turn%2==0){guesses++}
-        document.querySelector(".guess-screen").innerText=guesses
+        document.querySelector(".guess-screen1").innerText=guesses
     })
 })
 
@@ -155,9 +162,22 @@ function startTimer(duration, display) {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.textContent = minutes + ":" + seconds;
-
+        
+        
         if (--timer < 0) {
-            timer = duration;
+                if(rightGuess!==8){
+                document.querySelector(".lpopup").style.display="flex"
+                document.querySelector('.timer-screen').innerText="00:00";
+                }
+                else{
+                    document.querySelector('.timer-screen').innerText="00:00";
+                }
+                
+        }
+        else{
+            if(rightGuess==8){
+                document.querySelector('.timer-screen').innerText="00:00";
+            }
         }
     }, 1000);
 }

@@ -2,6 +2,10 @@ body{
   background:linear-gradient(180deg, #A22F16 0%, #090200 100%);
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .h1-div{
   display: flex;
@@ -25,8 +29,8 @@ body{
   justify-content: space-around;
 }
 .timer-guess{
-  width: 20vmin;
-  height: 50vmin;
+  width: 30vmin;
+  height: auto;
   background-color: antiquewhite;
   justify-content: center;
   text-align: center;
@@ -58,7 +62,16 @@ body{
   color: white;
   font-size: 40px;
 }
-.guess-screen{
+.guess-screen1{
+  width: 70%;
+  height: 50px;
+  background-color: black;
+  border-radius: 12px;
+  margin: 0 auto;
+  color: white;
+  font-size: 40px;
+}
+.guess-screen2{
   width: 70%;
   height: 50px;
   background-color: black;
@@ -91,7 +104,28 @@ body{
 	        animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
+.wpopup{
+  display: none;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  width: 50vmin;
+  height: 10vh;
+  background-color: aliceblue;
+  color: #090200;
 
+}
+.lpopup{
+  display: none;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  width: 50vmin;
+  height: 10vh;
+  background-color: aliceblue;
+  color: #090200;
+
+}
 @-webkit-keyframes flip-vertical-right {
     0% {
       -webkit-transform: rotateY(0);
