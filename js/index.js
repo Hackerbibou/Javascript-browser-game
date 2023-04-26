@@ -32,11 +32,7 @@ let turn=0
 class ImageClass{
     constructor(imageUrl,id){
         this.imageUrl=imageUrl
-        this.isFlip=false
         this.id=id
-    }
-    setFlip(){
-        this.isFlip=true
     }
 }
 let temporary={
@@ -66,8 +62,8 @@ function checkSolution(e){
         if(e.target.style.backgroundImage==temporary.temp){
             arrScores[d].isFlip=true;
             arrScores[ssplit(temporary.id)].isFlip=true;
-            document.querySelector("#a-"+d).setAttribute("disabled","true")
-            document.querySelector("#a-"+ssplit(temporary.id)).setAttribute("disabled","true")
+            document.querySelector("#a-"+d).style.pointerEvents = "none";
+            document.querySelector("#a-"+ssplit(temporary.id)).style.pointerEvents = "none";
             rightGuess++
             document.querySelector(".guess-screen2").innerText=rightGuess
             if(rightGuess==8){ 
@@ -111,7 +107,26 @@ console.log(temporary.temp)
 
 
 
+function clickFuntion(evt){
+    evt.preventDefault()
+    turn++
+    if(evt.target.style.backgroundColor=="red"){
+        evt.target.classList.toggle("card-flip")
+        
+        evt.target.style.background=arrScores[ssplit(evt.target.id)].imageUrl
 
+        evt.target.style.backgroundSize="9vmin 13vmin"
+    }
+    else{
+     
+        evt.target.classList.toggle("card-flip")
+        evt.target.stylevt.backgroundColor="red" 
+  
+
+    }
+    checkSolution(evt)
+    document.querySelector(".guess-screen1").innerText=guesses
+}
 
 
 
@@ -119,26 +134,7 @@ console.log(temporary.temp)
 
 let cards = document.querySelectorAll(".cards")
 cards.forEach(elem=>{
-    elem.addEventListener("click",function(e){
-        e.preventDefault()
-        turn++
-        if(e.target.style.backgroundColor=="red"){
-            e.target.classList.toggle("card-flip")
-            
-            e.target.style.background=arrScores[ssplit(e.target.id)].imageUrl
-
-            e.target.style.backgroundSize="9vmin 13vmin"
-        }
-        else{
-         
-            e.target.classList.toggle("card-flip")
-            e.target.style.backgroundColor="red" 
-      
-
-        }
-        checkSolution(e)
-        document.querySelector(".guess-screen1").innerText=guesses
-    })
+    elem.addEventListener("click",clickFuntion)
 })
 
 
