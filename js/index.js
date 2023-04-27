@@ -84,7 +84,7 @@ function checkSolution(e){
         lock=true
         setTimeout(()=>{
             lock=false
-        },1300)
+        },1100)
         guesses++
         if(e.target.style.backgroundImage==temporary.temp){
             document.querySelector("#a-"+d).style.pointerEvents = "none";
@@ -154,8 +154,6 @@ function startTimer(duration, display) {
                 document.querySelector(".lpopup").style.display="flex"
                
                 }
-                
-                
         }
         else{
             if(rightGuess==8){
