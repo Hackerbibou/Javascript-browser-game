@@ -8,7 +8,7 @@ const arrImages=["url('./images/goku.png')", "url('./images/gohan.png')", "url('
                 ]
 let v=[] 
 let lock=false
-
+let red="conic-gradient(from 179.9deg at 50% 50%, #EACB5F 0deg, rgba(18, 2, 2, 0.0260417) 350deg, rgba(72, 27, 27, 0) 360deg)"
 
 function randomizeAlgo(array1){
     let array2=[]
@@ -75,16 +75,18 @@ function ssplit(t){
 
 function checkSolution(e){
     e.preventDefault()
+    if(temporary.id==e.target.id)return
+    turn++
     let d = ssplit(e.target.id)
     document.querySelector("#a-"+d).classList.remove("card-flip");
         setTimeout(()=>{
             document.querySelector("#a-"+d).classList.add("card-flip");
         },0)
-    if(turn%2==0){
+    if(turn%2==0 && temporary.id!=e.target.id){
         lock=true
         setTimeout(()=>{
             lock=false
-        },1100)
+        },1200)
         guesses++
         if(e.target.style.backgroundImage==temporary.temp){
             document.querySelector("#a-"+d).style.pointerEvents = "none";
@@ -103,17 +105,16 @@ function checkSolution(e){
                 document.querySelector("#a-"+d).classList.remove("card-flip")
                 setTimeout(()=>{document.querySelector("#a-"+d).classList.add("card-flip")},1)
                 document.querySelector("#a-"+d).style.removeProperty("background")
-                document.querySelector("#a-"+d).style.backgroundColor="red"
+                document.querySelector("#a-"+d).style.background=red
                 document.querySelector("#a-"+ssplit(temporary.id)).classList.add("card-flip")
                 document.querySelector("#a-"+ssplit(temporary.id)).style.removeProperty("background")
-                document.querySelector("#a-"+ssplit(temporary.id)).style.backgroundColor="red"
+                document.querySelector("#a-"+ssplit(temporary.id)).style.background=red
 
             }, 1000)
             
         }
     }
     else{
-        
         temporary.temp=e.target.style.backgroundImage
         temporary.id=e.target.id
     }
@@ -123,8 +124,8 @@ function checkSolution(e){
 function clickFuntion(evt){
     if(lock==true)return
     evt.preventDefault()
-    turn++
-    if(evt.target.style.backgroundColor=="red"){
+    
+    if(evt.target.style.background=red){
         evt.target.style.background=arrScores[ssplit(evt.target.id)].imageUrl
         evt.target.style.backgroundSize="9vmin 13vmin"  
     }
@@ -168,7 +169,7 @@ document.querySelector(".start").addEventListener("click",function () {
     document.querySelectorAll(".cards").forEach(elem=>{
       
         elem.classList.add("card-flip");
-        elem.style.background="red" 
+        elem.style.background=red 
         elem.addEventListener("click",clickFuntion)
     })
     

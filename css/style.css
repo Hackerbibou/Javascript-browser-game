@@ -46,8 +46,8 @@ body{
 }
 .card-divs{
   position: relative;
-  background-color: rgb(129, 5, 5);
 
+  background: linear-gradient(180deg, #a27608 0%, rgba(136, 14, 14, 0.21) 100%);
   width: 65vmin;
   border-radius: 12px;
   height: auto;
