@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,57 +9,82 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="h1-div">
         <h1 style="margin-left:20px">Cardi G: A card guessing game</h1>
     </div>
     <div class="cards-timer">
-    <div class="card-divs">
-        <div class="div-row">
-            <p id="a-0" class="cards"></p>
-            <p id="a-1" class="cards"></p>
-            <p id="a-2" class="cards"></p>
-            <p id="a-3" class="cards"></p>
+          <div class="instruction">
+                <h1>Instructions</h1>
+                
+                <div class="instruction-screen">
+                    <p>Welcome to Cardi G.</p> 
+                    <ul>
+                    <li class="instruction-li">First, you must memorize each card's position before clicking the start button.</li>
+                    <li class="instruction-li">Click the start button once you memorize the cards.</li>
+                    <li class="instruction-li">After clicking the start button, the timer will start counting down.</li>
+                    <li class="instruction-li">Now that the game has started, you must choose two matching cards.</li>
+                    <li class="instruction-li">When you get two matching cards right, the cards stay at the flipped position. Otherwise they flip back.</li>
+                    <li class="instruction-li">You only win when you get all the matching sets before timer runs out.</li>
+                    <li class="instruction-li">Goodluck!</li>
+                    </ul>
+
+
+
+                </div>
+               
+
+
+        </div> 
+        <div class="card-divs">
+            <div class="div-row">
+                <p id="a-0" class="cards  flip-card flip-card-inner flip-card-back"></p>
+                <p id="a-1" class="cards  flip-card flip-card-inner flip-card-back"></p>
+                <p id="a-2" class="cards  flip-card flip-card-inner flip-card-back"></p>
+                <p id="a-3" class="cards  flip-card flip-card-inner flip-card-back"></p>
+            </div>
+            <div class="div-row">
+                <p id="a-4" class="cards  flip-card flip-card-inner flip-card-back"></p>
+                <p id="a-5" class="cards  flip-card flip-card-inner flip-card-back"></p>
+                <p id="a-6" class="cards  flip-card flip-card-inner flip-card-back"></p>
+                <p id="a-7" class="cards  flip-card flip-card-inner flip-card-back"></p>
+            </div>
+            <div class="div-row">
+                <p id="a-8" class="cards  flip-card flip-card-inner flip-card-back"></p>
+                <p id="a-9" class="cards  flip-card flip-card-inner flip-card-back"></p>
+                <p id="a-10" class="cards  flip-card flip-card-inner flip-card-back"></p>
+                <p id="a-11" class="cards  flip-card flip-card-inner flip-card-back"></p>
+            </div>
+            <div class="div-row">
+                <p id="a-12" class="cards  flip-card flip-card-inner flip-card-back"></p>
+                <p id="a-13" class="cards  flip-card flip-card-inner flip-card-back"></p>
+                <p id="a-14" class="cards  flip-card flip-card-inner flip-card-back"></p>
+                <p id="a-15" class="cards  flip-card flip-card-inner flip-card-back"></p>
+            </div>
         </div>
-        <div class="div-row">
-            <p id="a-4" class="cards"></p>
-            <p id="a-5" class="cards"></p>
-            <p id="a-6" class="cards"></p>
-            <p id="a-7" class="cards"></p>
+        <div class="timer-guess">
+            <h1>Timer</h1>
+            <p class="timer-screen">01:00</p>
+            <h1>Guesses</h1>
+            <p class="guess-screen1">0</p>
+            <h1>Valid</h1>
+            <p class="guess-screen2">0</p>
         </div>
-        <div class="div-row">
-            <p id="a-8" class="cards"></p>
-            <p id="a-9" class="cards"></p>
-            <p id="a-10" class="cards"></p>
-            <p id="a-11" class="cards"></p>
-        </div>
-        <div class="div-row">
-            <p id="a-12" class="cards"></p>
-            <p id="a-13" class="cards"></p>
-            <p id="a-14" class="cards"></p>
-            <p id="a-15" class="cards"></p>
-        </div>
-    </div>
-    <div class="timer-guess">
-        <h1>Timer</h1>
-        <p class="timer-screen">01:00</p>
-        <h1>Guesses</h1>
-        <p class="guess-screen1">0</p>
-        <h1>Valid</h1>
-        <p class="guess-screen2">0</p>
-    </div>
     </div>
     <div class="button-div">
         <button class="btn start">Start</button>
         <button class="btn playagain">Play Again</button>
     </div>
     <div class="wpopup">
-        <p>Congratulations you won<p>
-        <button class="btn playagain">Play Again</button>
+        <p>Congratulations you won
+        <p>
+            <button class="btn playagain">Play Again</button>
     </div>
     <div class="lpopup">
         <p>GAME OVER</p>
         <button class="btn playagain">Play Again</button>
     </div>
 </body>
+
 </html>

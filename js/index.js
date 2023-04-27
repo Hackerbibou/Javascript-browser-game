@@ -6,24 +6,41 @@ const arrImages=["url('./images/goku.png')", "url('./images/gohan.png')", "url('
                 "url('./images/krillin.png')", "url('./images/picolo.png')", "url('./images/trunks.png')",
                 "url('./images/yamcha.png')", "url('./images/tien.png')"
                 ]
-let v=[]
- 
+let v=[] 
+let lock=false
 
-    function randomize(urk,d){
-        let z=Math.floor(Math.random()*16)
-        
-        if( v[z]==null){
-            
-            d[z]=urk
-            return z
-            
+
+function randomizeAlgo(array1){
+    let array2=[]
+    let size =array1.length
+    function randomize(elem,arr2){
+        let z=Math.floor(Math.random()*size)
+        if( arr2[z]==null){
+            arr2[z]=elem
+            return z   
         }
-        
+        return randomize(elem,arr2)
+    }
+    for(let i=0;i<array1.length;i++){
+        array2[randomize(array1[i],array2)]=array1[i]   
+    }
+    return array2
+}
+
+function randomize(urk,d){
+        let z=Math.floor(Math.random()*16)
+        if( v[z]==null){
+            d[z]=urk
+            return z   
+        }
         return randomize(urk,d)
     }
-    for(let i=0;i<arrImages.length;i++){
-        v[randomize(arrImages[i],v)]=arrImages[i]   
-    }
+for(let i=0;i<arrImages.length;i++){
+    v[randomize(arrImages[i],v)]=arrImages[i]   
+}
+
+
+
 console.table(v)
 const arrScores=[]
 let guesses=0
@@ -50,6 +67,8 @@ v.forEach((elem, i)=>{
 
 
 
+
+
 function ssplit(t){
     return t.split("-")[1]
 }
@@ -57,11 +76,17 @@ function ssplit(t){
 function checkSolution(e){
     e.preventDefault()
     let d = ssplit(e.target.id)
+    document.querySelector("#a-"+d).classList.remove("card-flip");
+        setTimeout(()=>{
+            document.querySelector("#a-"+d).classList.add("card-flip");
+        },0)
     if(turn%2==0){
+        lock=true
+        setTimeout(()=>{
+            lock=false
+        },1300)
         guesses++
         if(e.target.style.backgroundImage==temporary.temp){
-            arrScores[d].isFlip=true;
-            arrScores[ssplit(temporary.id)].isFlip=true;
             document.querySelector("#a-"+d).style.pointerEvents = "none";
             document.querySelector("#a-"+ssplit(temporary.id)).style.pointerEvents = "none";
             rightGuess++
@@ -70,15 +95,16 @@ function checkSolution(e){
                 document.querySelector(".wpopup").style.display="flex"
                 document.querySelector('.timer-screen').innerText="00:00";
             }
-
         }
         else{
-          
+            document.querySelector("#a-"+ssplit(temporary.id)).classList.remove("card-flip")
+            
             setTimeout(()=>{
-                document.querySelector("#a-"+d).classList.toggle("card-flip")
+                document.querySelector("#a-"+d).classList.remove("card-flip")
+                setTimeout(()=>{document.querySelector("#a-"+d).classList.add("card-flip")},1)
                 document.querySelector("#a-"+d).style.removeProperty("background")
                 document.querySelector("#a-"+d).style.backgroundColor="red"
-                document.querySelector("#a-"+ssplit(temporary.id)).classList.toggle("card-flip")
+                document.querySelector("#a-"+ssplit(temporary.id)).classList.add("card-flip")
                 document.querySelector("#a-"+ssplit(temporary.id)).style.removeProperty("background")
                 document.querySelector("#a-"+ssplit(temporary.id)).style.backgroundColor="red"
 
@@ -87,63 +113,24 @@ function checkSolution(e){
         }
     }
     else{
+        
         temporary.temp=e.target.style.backgroundImage
         temporary.id=e.target.id
     }
-console.log(e.target.style.backgroundImage)
-console.log(temporary.temp)
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 function clickFuntion(evt){
+    if(lock==true)return
     evt.preventDefault()
     turn++
     if(evt.target.style.backgroundColor=="red"){
-        evt.target.classList.toggle("card-flip")
-        
         evt.target.style.background=arrScores[ssplit(evt.target.id)].imageUrl
-
-        evt.target.style.backgroundSize="9vmin 13vmin"
-    }
-    else{
-     
-        evt.target.classList.toggle("card-flip")
-        evt.target.stylevt.backgroundColor="red" 
-  
-
+        evt.target.style.backgroundSize="9vmin 13vmin"  
     }
     checkSolution(evt)
     document.querySelector(".guess-screen1").innerText=guesses
 }
-
-
-
-
-
-let cards = document.querySelectorAll(".cards")
-cards.forEach(elem=>{
-    elem.addEventListener("click",clickFuntion)
-})
-
-
-
-
-
-
-
-
 
 
 //countdown timer
@@ -161,13 +148,13 @@ function startTimer(duration, display) {
         
         
         if (--timer < 0) {
+            document.querySelectorAll(".cards").forEach(elem=>{elem.style.pointerEvents = "none"})
+            document.querySelector('.timer-screen').innerText="00:00";
                 if(rightGuess!==8){
                 document.querySelector(".lpopup").style.display="flex"
-                document.querySelector('.timer-screen').innerText="00:00";
+               
                 }
-                else{
-                    document.querySelector('.timer-screen').innerText="00:00";
-                }
+                
                 
         }
         else{
@@ -181,13 +168,15 @@ function startTimer(duration, display) {
 document.querySelector(".start").addEventListener("click",function () {
     
     document.querySelectorAll(".cards").forEach(elem=>{
-        elem.classList.toggle("card-flip")
+      
+        elem.classList.add("card-flip");
         elem.style.background="red" 
+        elem.addEventListener("click",clickFuntion)
     })
     
-    var fiveMinutes = 59,
+    var minutes = 59,
     display = document.querySelector('.timer-screen');
-    startTimer(fiveMinutes, display);
+    startTimer(minutes, display);
 })
 document.querySelectorAll(".playagain").forEach(elem=>{
     elem.addEventListener("click",()=>{

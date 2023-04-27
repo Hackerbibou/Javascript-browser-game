@@ -17,9 +17,37 @@ body{
   text-align: center;
   align-items: center;
 }
+.instruction{
+  width: 30vmin;
+  height: auto;
+  background-color: antiquewhite;
+  justify-content: center;
+  text-align: center;
+  text-align: center;
+  border-radius: 12px;
+}
+.instruction-screen{
+  display: flex;
+  overflow: hidden;
+  overflow-y: auto;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 80%;
+  min-height: 200px;
+  height:55vmin;
+  
+  background-color: #090200;
+  border-radius:10px ;
+  color: antiquewhite;
+}
+.instruction-li{
+  margin-bottom: 7px;
+  text-align: left;
+}
 .card-divs{
   position: relative;
   background-color: rgb(129, 5, 5);
+
   width: 65vmin;
   border-radius: 12px;
   height: auto;
@@ -84,7 +112,6 @@ body{
   width: 9vmin;
   height: 13vmin;
   transition: transform .5s;
-  transform-style: preserve-3d;
   border-radius: 10px;
 }
 
@@ -93,16 +120,10 @@ body{
   animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
   background-color: red;
   }
-  .cards.card-flip1{
-    transform: rotateY(-180deg);
-    animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-    }
+ 
 
 
-.flip-vertical-right {
-	-webkit-animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	        animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-}
+
 
 .wpopup{
   display: none;
@@ -111,7 +132,7 @@ body{
   flex-direction: column;
   justify-content: center;
   width: 50vmin;
-  height: auto;
+  height: 250px;
   padding-bottom: 10px;
   background-image: url("https://media3.giphy.com/media/l49JCSwMXyxHnYJws/giphy.gif");
   background-size: 50vmin auto;
@@ -127,7 +148,7 @@ body{
   flex-direction: column;
   justify-content: center;
   width: 50vmin;
-  height: auto;
+  height: 250px;
   padding-bottom: 10px;
   background-image: url("https://media3.giphy.com/media/3oFzme5Lmm8jMwXrji/giphy.gif");
   background-size: 50vmin auto;
