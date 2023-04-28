@@ -10,23 +10,6 @@ let v=[]
 let lock=false
 let red="conic-gradient(from 179.9deg at 50% 50%, #EACB5F 0deg, rgba(18, 2, 2, 0.0260417) 350deg, rgba(72, 27, 27, 0) 360deg)"
 
-function randomizeAlgo(array1){
-    let array2=[]
-    let size =array1.length
-    function randomize(elem,arr2){
-        let z=Math.floor(Math.random()*size)
-        if( arr2[z]==null){
-            arr2[z]=elem
-            return z   
-        }
-        return randomize(elem,arr2)
-    }
-    for(let i=0;i<array1.length;i++){
-        array2[randomize(array1[i],array2)]=array1[i]   
-    }
-    return array2
-}
-
 function randomize(urk,d){
         let z=Math.floor(Math.random()*16)
         if( v[z]==null){
@@ -38,7 +21,6 @@ function randomize(urk,d){
 for(let i=0;i<arrImages.length;i++){
     v[randomize(arrImages[i],v)]=arrImages[i]   
 }
-
 
 
 console.table(v)

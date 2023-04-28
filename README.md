@@ -19,7 +19,7 @@ Each cards will be chosen at random with math.random. Before adding a card at th
 
 <h2>CSS rules:</h2>
 <pre>
-font-family: '',sans-serif;
+font-family: sans-serif;
 </pre>
 <h2>Wireframe</h2>
 <img src="./images/wireframe.jpeg"/>
@@ -90,6 +90,11 @@ const images = ["url"]; //array of all images url we will use in this game
 
 const imagePosition = [i][j] //the images positions for the game
 
+class ImageClass{
+    constructor(imageUrl,id){
+        this.imageUrl=imageUrl
+        this.id=id
+    }
 const Score = {
     timer:"00:00" //countdown timer
     turn:0  //count how many boxes are clicked
